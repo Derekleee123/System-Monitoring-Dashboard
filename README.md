@@ -1,46 +1,55 @@
-# Getting Started with Create React App
+# 系統監控儀表板（System Monitoring Dashboard）
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+此專案為一個前後端分離的系統監控儀表板，使用 React + TypeScript 製作前端介面，Node.js 建立 API，顯示 CPU 核心數、記憶體與磁碟資訊，並以圖表方式視覺化即時系統狀態。
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📁 專案結構
+system-dashboard/
+├── client/ # React 前端（v18.3.1 + TypeScript 5.7.2）
+│ ├── src/
+│ │ ├── components/ # 圖表元件（例如 MemoryChart）
+│ │ └── App.tsx # 主頁面
+│ ├── public/
+│ └── package.json
+│
+├── server/ # Node.js 後端（v20.17.0）
+│ ├── server.js # API 提供系統資訊
+│ └── package.json
+│
+└── README.md # 說明文件（本檔）
 
-### `npm start`
+## 🚀 安裝與啟動流程
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 📦 安裝前端
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+cd client
+npm install
+npm start
+應用會啟動於 http://localhost:3000
+```
 
-### `npm test`
+### 📦 安裝後端
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+cd server
+npm install
+node server.js
+後端 API 服務於 http://localhost:3001/api/system
+```
 
-### `npm run build`
+## 📊 功能介紹
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. 系統資訊
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- 顯示 CPU 核心數
+- 顯示記憶體使用量
+- 顯示磁碟使用量
+- 顯示系統運行時間
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2. 記憶體使用量圖表
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- 即時顯示記憶體使用量變化
+- 以折線圖呈現
+- 每 5 秒更新一次資料
