@@ -6,9 +6,10 @@
 
 ## 📁 專案結構
 system-dashboard/
+```
 ├── client/ # React 前端（v18.3.1 + TypeScript 5.7.2）
 │ ├── src/
-│ │ ├── components/ # 圖表元件（例如 MemoryChart）
+│ │ ├── components/ # 圖表元件（例MemoryChart）
 │ │ └── App.tsx # 主頁面
 │ ├── public/
 │ └── package.json
@@ -18,6 +19,7 @@ system-dashboard/
 │ └── package.json
 │
 └── README.md # 說明文件（本檔）
+```
 
 ## 🚀 安裝與啟動流程
 
